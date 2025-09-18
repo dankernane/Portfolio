@@ -1,0 +1,245 @@
+:root {
+  --accent: #f28c0f;
+  --text: #111;
+  --bg: #fff;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* NAV */
+.topnav {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+}
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  font-weight: 900;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+}
+.outline {
+  -webkit-text-stroke: 2px var(--accent);
+  color: transparent;
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+}
+.script {
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.accent {
+  background: var(--accent);
+  width: 80%;
+  height: 80%;
+  transform: rotate(12deg);
+  position: absolute;
+  z-index: 1;
+}
+.hero-img {
+  width: 90%;
+  max-width: 400px;
+  z-index: 2;
+  position: relative;
+}
+
+/* ABOUT */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  align-items: center;
+}
+.about-text h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+.about-photo img {
+  width: 100%;
+  border-radius: 12px;
+}
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* PROJECTS */
+.projects {
+  max-width: 1100px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+}
+.projects h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.card {
+  text-decoration: none;
+  color: var(--text);
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+.card:hover img {
+  transform: scale(1.05);
+}
+.card h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.right {
+  text-align: right;
+}
+
+/* CONTACT */
+.contact {
+  max-width: 600px;
+  margin: 6rem auto;
+  padding: 0 2rem 4rem;
+  text-align: center;
+}
+.contact h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+form {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+input,
+textarea {
+  padding: 0.7rem;
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+button.btn {
+  cursor: pointer;
+}
+
+/* Projekt Detailseiten */
+.project-detail {
+  max-width: 800px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+.project-detail img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero,
+  .about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .accent {
+    display: none;
+  }
+}
+/* Projektseite */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+.project-header .logo img {
+  height: 50px;
+  width: auto;
+}
+.project-page {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+.project-page h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+.project-page .intro {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+}
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.project-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+}
